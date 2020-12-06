@@ -24,8 +24,8 @@ class Student: Human{
     var classindex: String = ""
     private var number: String = ""
     
-    func setNumber(Mumber: String){
-        number = Mumber
+    func setNumber(number: String){
+        self.number = number
     }
     
     func studentOut(){
@@ -48,5 +48,5 @@ student.school = "UESTC"
 student.faculty = "SICE"
 student.grade = "2020"
 student.classindex = "01"
-student.setNumber(Mumber: "2020011201021")
+student.setNumber(number: "2020011201021")
 student.studentOut()
