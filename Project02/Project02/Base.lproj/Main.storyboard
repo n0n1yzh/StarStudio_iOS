@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17700" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lis-v7-pOM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Project02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlq-TH-4Zx">
+                                <rect key="frame" x="107" y="100" width="200" height="100"/>
+                                <state key="normal" image="YLN-1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz0-x7-oaU">
+                                <rect key="frame" x="107" y="360" width="200" height="100"/>
+                                <state key="normal" image="YLN-1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7P-vK-d2q">
+                                <rect key="frame" x="107" y="230" width="200" height="100"/>
+                                <state key="normal" image="YLN-1"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K7P-vK-d2q" firstAttribute="centerX" secondItem="vlq-TH-4Zx" secondAttribute="centerX" id="4kx-Iy-HPC"/>
+                            <constraint firstItem="vlq-TH-4Zx" firstAttribute="centerX" secondItem="4qk-I5-YsI" secondAttribute="centerX" id="Dib-Yx-hln"/>
+                            <constraint firstItem="vlq-TH-4Zx" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="12" id="FkO-VS-5A7"/>
+                            <constraint firstItem="nz0-x7-oaU" firstAttribute="centerX" secondItem="K7P-vK-d2q" secondAttribute="centerX" id="KL7-Ou-18W"/>
+                            <constraint firstItem="nz0-x7-oaU" firstAttribute="top" secondItem="K7P-vK-d2q" secondAttribute="bottom" constant="30" id="bDv-Tt-WKc"/>
+                            <constraint firstItem="K7P-vK-d2q" firstAttribute="top" secondItem="vlq-TH-4Zx" secondAttribute="bottom" constant="30" id="mgG-8J-7gy"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="BV1-FR-VrT" id="nba-cJ-lPz"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="PCw-hg-aaM"/>
+                    <connections>
+                        <outlet property="button1" destination="vlq-TH-4Zx" id="tJl-Qs-pEv"/>
+                        <outlet property="button2" destination="K7P-vK-d2q" id="d10-ii-TSb"/>
+                        <outlet property="button3" destination="nz0-x7-oaU" id="ezu-DF-huB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="88.392857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YDq-pl-U6t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lis-v7-pOM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ks-c9-hUc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="rootViewController" id="qNd-va-XWq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSh-OG-MXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="YLN-1" width="200" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

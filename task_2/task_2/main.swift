@@ -21,7 +21,7 @@ class Student: Human{
     var school: String = ""
     var faculty: String = ""
     var grade: String = ""
-    var classindex: String = ""
+    var classIndex: String = ""
     private var number: String = ""
     
     func setNumber(number: String){
@@ -29,7 +29,7 @@ class Student: Human{
     }
     
     func studentOut(){
-        print("sex:",sex,", age:",age,", name:",name,", school:",school,", faculty:",faculty,", grade:",grade,", class:",classindex,", number:",number)
+        print("sex:",sex,", age:",age,", name:",name,", school:",school,", faculty:",faculty,", grade:",grade,", class:",classIndex,", number:",number)
     }
 }
 
@@ -47,6 +47,6 @@ student.name = "Lily"
 student.school = "UESTC"
 student.faculty = "SICE"
 student.grade = "2020"
-student.classindex = "01"
+student.classIndex = "01"
 student.setNumber(number: "2020011201021")
 student.studentOut()
