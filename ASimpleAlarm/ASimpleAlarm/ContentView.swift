@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import AVFoundation
+
 struct ContentView: View {
     @ObservedObject var globalContent = GlobalContent()
     
     @State private var isPresented = false
-
+    // var nowTime = Date()
+    
     
     var body: some View {
         
@@ -23,15 +26,23 @@ struct ContentView: View {
                     /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
                 })
             */
+                Button(action: {
+                    let home = NSHomeDirectory() as NSString;
+                    print("沙盒根目录:\(home)")
+                }, label: {
+                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                })
               
-                List(globalContent.alarmLabelArray, id: \.self) {
-                     AlarmLabelView(name: $0)
-                 }
-                 
+            List(globalContent.alarmLabelArray, id: \.self) {
+                AlarmLabelView(name: $0)
+            }
+        
+
             }
             .navigationBarTitle(Text("ALARM"), displayMode: .inline)
             .navigationBarItems(trailing: Button("Add") {
                 self.isPresented = true
+                //self.playAudio()
             }.sheet(isPresented: $isPresented, content: {
                 AddAlarmView(globalContent: globalContent)
             }))
@@ -39,13 +50,9 @@ struct ContentView: View {
         
     }
     
-    func updateView() -> some View {
-        return List {
-            ForEach(globalContent.alarmLabelArray, id: \.self) { item in
-                AlarmLabelView(name: item)
-            }
-        }
-    }
+    
+    
+    
 }
 
 struct AlarmLabelView : View {
@@ -69,3 +76,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
